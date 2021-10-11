@@ -31,7 +31,7 @@ public:
     // CONSTANT MEMBERS
     // pre: none
     // post: returns the number of elements in this DynamicBag
-    std::size_t size() const {return used_;}
+    std::size_t size() const;
 
     // pre: none
     // post: returns the number of times entry appears in this DynamicBag
