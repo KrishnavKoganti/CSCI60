@@ -30,6 +30,8 @@ DynamicBag::DynamicBag(const DynamicBag &b) {
 }
 
 void DynamicBag::operator=(const DynamicBag &b) {
+  if(this==&b) // pointer to the object you are inside of 
+    return;
   delete[] data_;
   capacity_ = b.size();
   used_ = b.size();
