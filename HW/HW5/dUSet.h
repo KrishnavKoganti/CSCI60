@@ -11,6 +11,8 @@ public:
   dUSet(DynamicBag &b);
   // inserts a target making sure it is not a duplicate
   void insert(int target);
+
+  
 };
 
 #endif

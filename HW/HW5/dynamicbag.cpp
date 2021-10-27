@@ -43,7 +43,7 @@ void DynamicBag::operator=(const DynamicBag &b) {
 }
 DynamicBag::~DynamicBag() { delete[] data_; }
 int DynamicBag::operator[](std::size_t pos) const {
-  assert(pos <= used_);
+  assert(pos < used_);
   return data_[pos];
 }
 
@@ -82,31 +82,30 @@ void DynamicBag::insert(int target) {
   }
 }
 
-void DynamicBag::insertAt(int item, size_t index) {
+void DynamicBag::insertAt(int item, std::size_t index) {
   if (capacity_ == used_) {
-    size_t newcap;
+    std::size_t newcap;
     if (capacity_ > 0)
       newcap = 2 * capacity_;
     else
       newcap = 1;
     int *temp = new int[newcap];
-    for (size_t i = 0; i < index; ++i)
+    for (std::size_t i = 0; i < index; ++i)
       temp[i] = data_[i];
     temp[index] = item;
-    for (size_t i = index + 1; i < used_ + 1; ++i)
+    for (std::size_t i = index + 1; i < used_ + 1; ++i)
       temp[i] = data_[i - 1];
     delete[] data_;
     data_ = temp;
     capacity_ = newcap;
   } else {
-    for (size_t i = used_; i > index; --i) {
+    for (std::size_t i = used_; i > index; --i) {
       data_[i] = data_[i - 1];
     }
     data_[index] = item;
   }
   used_++;
 }
-
 
 void DynamicBag::operator+=(const DynamicBag &b) {
 
@@ -162,4 +161,3 @@ std::ostream &operator<<(std::ostream &out, const DynamicBag &b) {
     out << b[i] << " ";
   return out;
 }
-
