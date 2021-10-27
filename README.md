@@ -1,2 +1,4 @@
 # CSCI60
-CSCI 60 code
+All work for Santa Clara CSCI 60: Object-Oriented Programming.
+
+Taken: Fall 2021
