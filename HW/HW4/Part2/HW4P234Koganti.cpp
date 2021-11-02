@@ -155,7 +155,7 @@ void dbiguint::operator *=(const dbiguint & b){
   }
   std::string temp = std::to_string(product);
   dbiguint output(temp);//make product into a string and make a new dbiguint
-  // delete [] data_;
+   delete [] data_;
   int size = temp.length()+1;
   data_ = new unsigned short[capacity_];
   // std::cout<<output.size()<<"\n";
