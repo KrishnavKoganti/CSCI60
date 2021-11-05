@@ -2,6 +2,12 @@
     "files.associations": {
         "map": "cpp",
         "utility": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "iostream": "cpp"
     }
 }
