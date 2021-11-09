@@ -1,0 +1,10 @@
+Which do you prefer for this problem; set or vector?  Give a couple of sentences of explanation for your choice.
+
+For this problem I prefer to use a set. The set is easier because when data it inputted, it already gets rid of 
+duplicates and puts it in sorted ordered. For a vector, though, we have to call algorithms to sort and get of duplicates.
+Also, part A is significantly fast in sorting all the data. 
+
+Part A Time: 14638 microseconds
+
+Part B Time: 1512032 microseconds
+
