@@ -19,14 +19,14 @@ tail = temp;
 tail = (*tail).link();
 
 //add a node with value 1 before 5
-temp = new node(1,head);
+node *temp = new node(1,head);
 head = temp;
 //without temp
 head = new node(1,head);
 
 
 //insert a node with value 7 after 6
-temp = new node(7,nullptr);
+node* temp = new node(7,nullptr);
 (*tail).set_link(temp);
 tail = temp;
 
