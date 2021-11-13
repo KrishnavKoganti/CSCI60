@@ -133,7 +133,7 @@ void list_copy(const node<T>* orig_head, const node<T>* orig_tail, node<T>*& new
     list_tail_insert(new_head, new_tail, orig_tail->data());
 }
 
-template <class T>
+template <class T>e
 void list_remove(node<T>* previous, node<T>*& tail)
 {
     if(previous->link() == nullptr) {
