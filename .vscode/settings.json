@@ -13,5 +13,8 @@
         "string": "cpp",
         "string_view": "cpp",
         "vector": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "LBAG"
+    ]
 }
