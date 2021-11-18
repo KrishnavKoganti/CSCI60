@@ -7,24 +7,29 @@
 
 using namespace std;
 
-double meals(map<string,int> n){
+double meals(map<string, int> n)
+{
   double meal = 0;
-  for(map<string,int>::iterator it = n.begin(); it != n.end(); it++){
+  for (map<string, int>::iterator it = n.begin(); it != n.end(); it++)
+  {
     meal += it->second;
   }
   return meal;
 }
 
-double people(map<string,int> n){
+double people(map<string, int> n)
+{
   double p = 0;
-  for(map<string,int>::iterator it = n.begin(); it != n.end(); it++){
+  for (map<string, int>::iterator it = n.begin(); it != n.end(); it++)
+  {
     p++;
   }
   return p;
 }
 
-int main(){
-  map<string,int> names;
+int main()
+{
+  map<string, int> names;
 
   ifstream inStream;
   ofstream outStream;
@@ -33,29 +38,32 @@ int main(){
   outStream.open("output1b.txt");
 
   string str;
-  while(getline(inStream,str)){
-    if(str.size()> 0){
-      if(names.find(str) != names.end()){
-        names[str] +=1;
-      }else{
+  while (getline(inStream, str))
+  {
+    if (str.size() > 0)
+    {
+      if (names.find(str) != names.end())
+      {
+        names[str] += 1;
+      }
+      else
+      {
         names[str] = 1;
       }
     }
   }
 
-  for(map<string,int>::iterator it = names.begin(); it != names.end(); it++){
-    outStream<< it->first<<" : " << it->second<<endl;
+  for (map<string, int>::iterator it = names.begin(); it != names.end(); it++)
+  {
+    outStream << it->first << " : " << it->second << endl;
   }
-
-  
-  cout<< "Meals = "<<meals(names)<<endl;
-  cout<< "People  = "<<people(names)<<endl;
-  cout<< "Average = "<<meals(names)/people(names)<<endl;
-
-
 
   inStream.close();
   outStream.close();
+
+  cout << "Meals = " << meals(names) << endl;
+  cout << "People  = " << people(names) << endl;
+  cout << "Average = " << meals(names) / people(names) << endl;
 
   return 0;
 }
