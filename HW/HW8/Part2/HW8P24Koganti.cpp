@@ -2,7 +2,20 @@
 #include "node.h"
 
 using namespace std;
-
+///////////////////////////////////////////////////////////////////////////////
+//Part 2
+void list_clear(node *&head_ptr, node *&tail_ptr)
+{
+  node *p = head_ptr;
+  while (p != nullptr)
+  {
+    head_ptr = head_ptr->link(); //move head_ptr to next node
+    delete p;                    //delete the node
+    p = head_ptr;                //move p to next node
+  }
+  tail_ptr = nullptr; //set tail_ptr to nullptr
+}
+//Part 4 w/EC
 void list_reverse(node *&head_ptr, node *&tail_ptr)
 {
   node *p = head_ptr;
@@ -23,6 +36,8 @@ void list_reverse(node *&head_ptr, node *&tail_ptr)
     tail_ptr = tail_ptr->link();
   }
 }
+
+///////////////////////////////////////////////////////////////////////////////
 
 size_t list_index(node *head_ptr, int target)
 {
@@ -49,17 +64,6 @@ node *list_at(node *head_ptr, std::size_t n)
   }
   return temp;
 }
-void list_clear(node *&head_ptr, node *&tail_ptr)
-{
-  node *p = head_ptr;
-  while (p != nullptr)
-  {
-    head_ptr = head_ptr->link();
-    delete p;
-    p = head_ptr;
-  }
-  tail_ptr = nullptr;
-}
 
 int main()
 {
@@ -74,18 +78,21 @@ int main()
   temp = new node(5, nullptr);
   tail->set_link(temp);
   tail = temp;
-  for (const node *p = head; p != nullptr; p = p->link()){
+  for (const node *p = head; p != nullptr; p = p->link())
+  {
     cout << p->data() << " ";
   }
   cout << endl;
 
   list_reverse(head, tail);
-  for (const node *p = head; p != nullptr; p = p->link()){
+  for (const node *p = head; p != nullptr; p = p->link())
+  {
     cout << p->data() << " ";
   }
   cout << endl;
   list_clear(head, tail);
-  for (const node *p = head; p != nullptr; p = p->link()){
+  for (const node *p = head; p != nullptr; p = p->link())
+  {
     cout << p->data() << " ";
   }
   cout << endl;
