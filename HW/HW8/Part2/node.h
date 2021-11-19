@@ -34,15 +34,6 @@ public:
     // post: sets the link field to given value
     void set_link(node * newlink);
 
-   
-    node* list_at(node * head_ptr, std::size_t n);
-
-
-    size_t list_index(node *head_ptr, int target);
-
-    void list_clear(node * & head_ptr, node * & tail_ptr);
-
-    void list_reverse(node * & head_ptr, node * & tail_ptr);
 
 private:
     int data_;
