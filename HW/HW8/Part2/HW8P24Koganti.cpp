@@ -27,7 +27,7 @@ void list_reverse(node *&head_ptr, node *&tail_ptr)
     q = p;
     p = p->link();
     q->set_link(r);
-  }
+  }0p[;. cvb]
   head_ptr = q;
   tail_ptr = head_ptr;
 
